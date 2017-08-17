@@ -1,0 +1,17 @@
+<body>
+<div class="container">
+    <div class="info">
+        <h1>Publicar video</h1>
+    </div>
+</div>
+<form method="post" action="/publicando" enctype="multipart/form-data">
+    <div class="form">
+        <input type="file" class="form-control" name="video"/>
+        <input type="text" class="form-control" name="title" placeholder="Titulo"/>
+        <input type="text" class="form-control" name="description" placeholder="Descripcion"/>
+        <label> <input type="checkbox" name="privateFile"/> Privado </label>
+        <button>Subir</button>
+    </div>
+</form>
+
+</body>
