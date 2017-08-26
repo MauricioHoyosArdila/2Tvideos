@@ -1,3 +1,111 @@
+# Rendimiento
+
+## 1. Marco de referencia:
+
+### a. ¿Qué es? 
+La idea rendimiento refiere a la proporción que surge entre los medios empleados para obtener algo y el resultado que se consigue. El beneficio o el provecho que brinda algo o alguien también se conoce como rendimiento.
+
+Por otro lado, es el rendimiento de la computadora es la cantidad de trabajo realizado por un sistema informático. Dependiendo del contexto, un alto rendimiento de equipo puede incluir uno o más de los siguientes:
+
+* Tiempo de respuesta corto para una determinada pieza de trabajo
+* Alto throughput (tasa de procesamiento de trabajo)
+* Baja utilización de recursos computacionales
+* Alta disponibilidad del sistema de computación o de la aplicación
+* Rápida (o muy compacta)compresión y descompresión de datos
+* Gran ancho de banda
+* Tiempo corto de transmisión de datos
+
+### b. ¿Qué patrones se pueden emplear? 
+
+** Active-active redundancy:** consiste por lo menos de 2 nodos. Los n nodos están corriendo los mismo servicios simultáneamente. Para asegurar esto, se utilizan balanceadores de carga para distribuir los workloads por todos los nodos, para prevenir una sobrecarga sobre un nodo. Los workloads distribuidos conlleva a una mejora en tiempo de respuesta y throughput.
+
+**Cache-Aside pattern:** Cargar datos a petición en un caché desde un almacén de datos. Esto puede mejorar el rendimiento y también ayuda a mantener la coherencia entre los datos almacenados en la caché y los datos en el almacén de datos subyacente.
+
+**Command and Query Responsibility Segregation (CQRS) pattern :** Segregar operaciones que leen datos de operaciones que actualizan datos mediante interfaces independientes. Esto puede maximizar el rendimiento, la escalabilidad y la seguridad. Soporta la evolución del sistema a través del tiempo mediante una mayor flexibilidad y evita que los comandos de actualización provoquen conflictos de combinación en el nivel de dominio.
+
+**Event Sourcing pattern:** En lugar de almacenar sólo el estado actual de los datos en un dominio, utilice un almacén sólo de anexos para registrar la serie completa de acciones tomadas en esos datos. La tienda actúa como el sistema de registro y puede utilizarse para materializar los objetos de dominio. Esto puede simplificar tareas en dominios complejos, evitando la necesidad de sincronizar el modelo de datos y el dominio empresarial, mejorando al mismo tiempo el rendimiento, la escalabilidad y la capacidad de respuesta. También puede proporcionar consistencia para los datos transaccionales y mantener pistas de auditoría completas e historial que pueden permitir acciones compensatorias.
+
+**Index Table pattern:** Cree índices sobre los campos en los almacenes de datos que son frecuentemente referenciados por las consultas. Este patrón puede mejorar el rendimiento de la consulta al permitir que las aplicaciones busquen más rápidamente los datos que se recuperarán de un almacén de datos.
+
+**Materialized View pattern:** Generar vistas prepopuladas sobre los datos en uno o más almacenes de datos cuando los datos no están idealmente formateados para las operaciones de consulta requeridas. Esto puede ayudar a realizar consultas eficientes y extracción de datos, y mejorar el rendimiento de la aplicación.
+
+**Priority Queue pattern:** Priorizar las solicitudes enviadas a los servicios para que las solicitudes con mayor prioridad sean recibidas y procesadas más rápidamente que aquellas con una prioridad menor. Este patrón es útil en aplicaciones que ofrecen garantías de nivel de servicio diferentes a clientes individuales.
+
+**Queue-Based Load Leveling pattern:** Utilice una cola que actúa como un búfer entre una tarea y un servicio que invoca para suavizar las cargas pesadas intermitentes que pueden provocar que el servicio falle o que la tarea expire. Esto puede ayudar a minimizar el impacto de los picos de demanda sobre la disponibilidad y la capacidad de respuesta tanto para la tarea como para el servicio.
+
+**Sharding pattern:** Divida un almacén de datos en un conjunto de particiones horizontales o fragmentos. Esto puede mejorar la escalabilidad al almacenar y acceder a grandes volúmenes de datos.
+
+**Static Content Hosting pattern:** Implementar contenido estático en un servicio de almacenamiento basado en la nube que pueda entregarlos directamente al cliente. Esto puede reducir la necesidad de instancias de computación potencialmente costosas.
+
+
+
+Throttling pattern: Controlar el consumo de recursos utilizados por una instancia de una aplicación, un inquilino individual o un servicio completo. Esto puede permitir que el sistema continúe funcionando y cumpla con los acuerdos de nivel de servicio, incluso cuando el aumento de la demanda impone una carga extrema sobre los recursos.
+
+### c. Especificación mediante escenarios 
+
+Esquema base para representación de escenarios.
+
+
+
+### d. ¿Qué tácticas se pueden emplear? 
+* El consumo de recursos 
+* El tiempo de bloqueo. 
+* Arquitectura simple, diseño modular en componentes de software, estrategias de caché, automatización para actividades de mantenimiento y rendimiento.
+* Nuevas versiones de las tecnologías utilizadas.
+* Optimización de software (Performance tuning).
+* Código limpio.
+* Utilización de colas y caché.
+* Incrementar recursos. (Crecer vertical y horizontalmente)
+* Optimización de algoritmos.
+* Utilización de computación distribuida y/o paralela.
+* Testing.
+
+
+### e. Qué herramientas se pueden utilizar para lograrlo?
+**NGINX:** es un servidor web/proxy inverso ligero de alto rendimiento y un proxy para protocolos de correo electrónico.
+
+Es software libre y de código abierto, licenciado bajo la Licencia BSD simplificada; también existe una versión comercial distribuida bajo el nombre de nginx plus.3​ Es multiplataforma, por lo que corre en sistemas tipo Unix (GNU/Linux, BSD, Solaris, Mac OS X, etc.) y Windows.
+**Jmeter :** es un proyecto de Apache que puede ser utilizado como una herramienta de prueba de carga para analizar y medir el desempeño de una variedad de servicios, con énfasis en aplicaciones web.
+
+JMeter puede ser usado como una herramienta de pruebas unitarias para conexiones de bases de datos con JDBC, FTP, LDAP, Servicios web, JMS, HTTP y conexiones TCP genéricas. JMeter puede también ser configurado como un monitor, aunque es comúnmente considerado una solución ad-hoc respecto de soluciones avanzadas de monitoreo.
+
+Mientras que JMeter es clasificado como una herramienta de "generación de carga", no es una descripción completa de la herramienta. JMeter soporta aserciones para asegurarse que los datos recibidos son correctos, por cookies de hilos, configuración de variables y una variedad de reportes.
+
+## 2. Análisis: Mediante escenarios y/o propuesta en marco teórico
+ 
+
+
+## 3. Diseño: En Aplicación y en Sistema
+
+### a. Vistas de arquitectura 
+
+### b. Patrones de arquitectura. 
+
+Se implementará una arquitectura basada en los siguientes patrones:
+
+** Active-active redundancy:** consiste por lo menos de 2 nodos. Los n nodos están corriendo los mismo servicios simultáneamente. Para asegurar esto, se utilizan balanceadores de carga para distribuir los workloads por todos los nodos, para prevenir una sobrecarga sobre un nodo. Los workloads distribuidos conlleva a una mejora en tiempo de respuesta y throughput. Nota: Este trabaja directamente con la disponibilidad del sistema.
+
+**Cache-Aside pattern:** Cargar datos a petición en un caché desde un almacén de datos. Esto puede mejorar el rendimiento y también ayuda a mantener la coherencia entre los datos almacenados en la caché y los datos en el almacén de datos subyacente.
+
+### c. Best Practices. 
+Se utilizará caché y código limpio.
+
+### d. Tácticas. 
+* Las tácticas que se van a utilizar son las siguientes:
+* Arquitectura simple, diseño modular en componentes de software, estrategias de caché, automatización para actividades de mantenimiento y rendimiento.
+* Código limpio.
+* Utilización de caché.
+* Optimización de algoritmos.
+
+### e. Herramientas
+* NGINX
+* Jmeter
+
+
+
+
+
+
 # Seguridad
 
 ## 1. Marco de referencia:
