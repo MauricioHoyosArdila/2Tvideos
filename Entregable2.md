@@ -39,7 +39,7 @@ Por otro lado, es el rendimiento de la computadora es la cantidad de trabajo rea
 
 
 
-Throttling pattern: Controlar el consumo de recursos utilizados por una instancia de una aplicación, un inquilino individual o un servicio completo. Esto puede permitir que el sistema continúe funcionando y cumpla con los acuerdos de nivel de servicio, incluso cuando el aumento de la demanda impone una carga extrema sobre los recursos.
+**Throttling pattern:** Controlar el consumo de recursos utilizados por una instancia de una aplicación, un inquilino individual o un servicio completo. Esto puede permitir que el sistema continúe funcionando y cumpla con los acuerdos de nivel de servicio, incluso cuando el aumento de la demanda impone una carga extrema sobre los recursos.
 
 ### c. Especificación mediante escenarios 
 
@@ -65,6 +65,7 @@ Esquema base para representación de escenarios.
 **NGINX:** es un servidor web/proxy inverso ligero de alto rendimiento y un proxy para protocolos de correo electrónico.
 
 Es software libre y de código abierto, licenciado bajo la Licencia BSD simplificada; también existe una versión comercial distribuida bajo el nombre de nginx plus.3​ Es multiplataforma, por lo que corre en sistemas tipo Unix (GNU/Linux, BSD, Solaris, Mac OS X, etc.) y Windows.
+
 **Jmeter:** es un proyecto de Apache que puede ser utilizado como una herramienta de prueba de carga para analizar y medir el desempeño de una variedad de servicios, con énfasis en aplicaciones web.
 
 JMeter puede ser usado como una herramienta de pruebas unitarias para conexiones de bases de datos con JDBC, FTP, LDAP, Servicios web, JMS, HTTP y conexiones TCP genéricas. JMeter puede también ser configurado como un monitor, aunque es comúnmente considerado una solución ad-hoc respecto de soluciones avanzadas de monitoreo.
