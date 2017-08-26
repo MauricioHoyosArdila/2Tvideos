@@ -1,15 +1,15 @@
-#Seguridad
+# Seguridad
 
-##1. Marco de referencia:
+## 1. Marco de referencia:
 
-##a. ¿Qué es? 
+### a. ¿Qué es? 
 Seguridad es la capacidad de un sistema para prevenir acciones maliciosas o accidentales que estén fuera del uso para el que fue creada la aplicación o sistema, y para prevenir divulgación o pérdida de la información. Las aplicaciones en la nube están expuestas en internet fuera de los límites locales confiables, son a menudo abiertas al público, y puede supervisar a usuarios no confiables. Las aplicaciones deben ser diseñadas y desplegadas de forma que estén protegidas de ataques maliciosos, con acceso restringido solo para usuarios autorizados, y proteger la sensibilidad de los datos. 
 En general dentro de este QA se deben de tener en cuenta siempre tres simples atributos que son:
 Confidencialidad: el acceso a los activos del sistema está limitado a usuarios autorizados.
 Integridad: los activos del sistema solo pueden ser borrados o modificados por usuarios autorizados.
 Disponibilidad: el acceso a los activos en un tiempo razonable está garantizado para usuarios autorizados.
 
-##b. ¿Qué patrones se pueden emplear? 
+### b. ¿Qué patrones se pueden emplear? 
 
 Patrón de Identidad Federada: Delegar la autenticación en un proveedor de identidad externo. Esto puede simplificar el desarrollo, minimizar los requisitos de administración de usuarios y mejorar la experiencia del usuario de la aplicación.
 
@@ -25,13 +25,13 @@ Patrón de Valet Key: Utilice un token que proporcione a los clientes acceso res
 Autenticación por terceros con openID: Con eso se busca que otro servidor diferente a los de la aplicación se encargue de la autenticación.
 
 
-##c. Especificación mediante escenarios 
+### c. Especificación mediante escenarios 
 
 Esquema base para representación de escenarios.
 
 
 
-##d. ¿Qué tácticas se pueden emplear? 
+### d. ¿Qué tácticas se pueden emplear? 
 
 Autenticar a los usuarios. La autenticación es asegurar que un usuario o un equipo remoto es realmente quien dice ser. Contraseñas, contraseñas de una sola vez, certificados digitales, y las identificaciones biométricas proporcionan autenticación.
 
@@ -56,7 +56,7 @@ Las relacionados con la restauración de estado.
 Las relacionados con la identificación atacante (con fines de carácter preventivo o punitivo).
 
 
-##e. Qué herramientas se pueden utilizar para lograrlo?
+### e. Qué herramientas se pueden utilizar para lograrlo?
 
 OpenID: Es un sistema de autenticación digital descentralizado, con el que un usuario puede identificarse en una página web a través de una URL (o un XRI en la versión actual) y puede ser verificado por cualquier servidor que soporte el protocolo.
 En los sitios que soporten OpenID, los usuarios no tienen que crearse una nueva cuenta de usuario para obtener acceso. En su lugar, solo necesitan disponer de un identificador creado en un servidor que verifique OpenID, llamado proveedor de identidad o IdP
@@ -67,25 +67,25 @@ SonarQube: Es una herramienta para auditar código tremendamente potente, tiene 
 
 Pruebas con DoS: Se harán pruebas con ataques de denegación de servicio, para luego corregir los posibles problemas o debilidades de la aplicación con este tipo de ataques.
 
-#2. Análisis: Mediante escenarios y/o propuesta en marco teórico
+## 2. Análisis: Mediante escenarios y/o propuesta en marco teórico
  
 
 
 
-#3. Diseño: En Aplicación y en Sistema
+## 3. Diseño: En Aplicación y en Sistema
 
-##3a. Vistas de arquitectura 
+### a. Vistas de arquitectura 
 
-##b. Patrones de arquitectura. 
+### b. Patrones de arquitectura. 
 
 Se implementará una arquitectura basada en el siguiente patrón:
 
 Autenticación por terceros con openID: Con eso se busca que otro servidor diferente a los de la aplicación se encargue de la autenticación, siguiendo la siguiente secuencia:
 
-##c. Best Practices. 
+### c. Best Practices. 
 Elaborar un mapa de posibles riesgos o fallos de la aplicación para controlarlos.
 
-##d. Tácticas. 
+### d. Tácticas. 
 Las tácticas que se van a utilizar son las siguientes:
 * Autenticar a los usuarios.
 * Autorizar a los usuarios.  
@@ -93,6 +93,6 @@ Las tácticas que se van a utilizar son las siguientes:
 * Limitar el acceso.
 * Detección de ataque
 
-##e. Herramientas
+### e. Herramientas
 * OpenID
 * SonarQube
