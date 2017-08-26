@@ -17,7 +17,7 @@ Por otro lado, es el rendimiento de la computadora es la cantidad de trabajo rea
 
 ### b. ¿Qué patrones se pueden emplear? 
 
-** Active-active redundancy: ** consiste por lo menos de 2 nodos. Los n nodos están corriendo los mismo servicios simultáneamente. Para asegurar esto, se utilizan balanceadores de carga para distribuir los workloads por todos los nodos, para prevenir una sobrecarga sobre un nodo. Los workloads distribuidos conlleva a una mejora en tiempo de respuesta y throughput.
+**Active-active redundancy:** consiste por lo menos de 2 nodos. Los n nodos están corriendo los mismo servicios simultáneamente. Para asegurar esto, se utilizan balanceadores de carga para distribuir los workloads por todos los nodos, para prevenir una sobrecarga sobre un nodo. Los workloads distribuidos conlleva a una mejora en tiempo de respuesta y throughput.
 
 ** Cache-Aside pattern: ** Cargar datos a petición en un caché desde un almacén de datos. Esto puede mejorar el rendimiento y también ayuda a mantener la coherencia entre los datos almacenados en la caché y los datos en el almacén de datos subyacente.
 
