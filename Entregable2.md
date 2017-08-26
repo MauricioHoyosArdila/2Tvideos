@@ -12,7 +12,7 @@ Disponibilidad: el acceso a los activos en un tiempo razonable está garantizado
 ### b. ¿Qué patrones se pueden emplear? 
 
 Patrón de Identidad Federada: Delegar la autenticación en un proveedor de identidad externo. Esto puede simplificar el desarrollo, minimizar los requisitos de administración de usuarios y mejorar la experiencia del usuario de la aplicación.
-
+![Alt text](https://ibb.co/j3LKU5)
 
 Gatekeeper pattern: Proteja las aplicaciones y los servicios utilizando una instancia de host dedicada que actúa como intermediario entre los clientes y la aplicación o servicio valida y desinfecta las solicitudes y pasa solicitudes y datos entre ellas. Esto puede proporcionar una capa adicional de seguridad y limitar la superficie de ataque del sistema.
 
