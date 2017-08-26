@@ -21,7 +21,7 @@ Por otro lado, es el rendimiento de la computadora es la cantidad de trabajo rea
 
 **Cache-Aside pattern:** Cargar datos a petición en un caché desde un almacén de datos. Esto puede mejorar el rendimiento y también ayuda a mantener la coherencia entre los datos almacenados en la caché y los datos en el almacén de datos subyacente.
 
-**Command and Query Responsibility Segregation (CQRS) pattern :** Segregar operaciones que leen datos de operaciones que actualizan datos mediante interfaces independientes. Esto puede maximizar el rendimiento, la escalabilidad y la seguridad. Soporta la evolución del sistema a través del tiempo mediante una mayor flexibilidad y evita que los comandos de actualización provoquen conflictos de combinación en el nivel de dominio.
+**Command and Query Responsibility Segregation (CQRS) pattern:** Segregar operaciones que leen datos de operaciones que actualizan datos mediante interfaces independientes. Esto puede maximizar el rendimiento, la escalabilidad y la seguridad. Soporta la evolución del sistema a través del tiempo mediante una mayor flexibilidad y evita que los comandos de actualización provoquen conflictos de combinación en el nivel de dominio.
 
 **Event Sourcing pattern:** En lugar de almacenar sólo el estado actual de los datos en un dominio, utilice un almacén sólo de anexos para registrar la serie completa de acciones tomadas en esos datos. La tienda actúa como el sistema de registro y puede utilizarse para materializar los objetos de dominio. Esto puede simplificar tareas en dominios complejos, evitando la necesidad de sincronizar el modelo de datos y el dominio empresarial, mejorando al mismo tiempo el rendimiento, la escalabilidad y la capacidad de respuesta. También puede proporcionar consistencia para los datos transaccionales y mantener pistas de auditoría completas e historial que pueden permitir acciones compensatorias.
 
@@ -65,7 +65,7 @@ Esquema base para representación de escenarios.
 **NGINX:** es un servidor web/proxy inverso ligero de alto rendimiento y un proxy para protocolos de correo electrónico.
 
 Es software libre y de código abierto, licenciado bajo la Licencia BSD simplificada; también existe una versión comercial distribuida bajo el nombre de nginx plus.3​ Es multiplataforma, por lo que corre en sistemas tipo Unix (GNU/Linux, BSD, Solaris, Mac OS X, etc.) y Windows.
-**Jmeter :** es un proyecto de Apache que puede ser utilizado como una herramienta de prueba de carga para analizar y medir el desempeño de una variedad de servicios, con énfasis en aplicaciones web.
+**Jmeter:** es un proyecto de Apache que puede ser utilizado como una herramienta de prueba de carga para analizar y medir el desempeño de una variedad de servicios, con énfasis en aplicaciones web.
 
 JMeter puede ser usado como una herramienta de pruebas unitarias para conexiones de bases de datos con JDBC, FTP, LDAP, Servicios web, JMS, HTTP y conexiones TCP genéricas. JMeter puede también ser configurado como un monitor, aunque es comúnmente considerado una solución ad-hoc respecto de soluciones avanzadas de monitoreo.
 
