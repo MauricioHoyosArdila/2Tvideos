@@ -1,3 +1,81 @@
+# Disponibilidad
+
+## 1. Marco de referencia:
+
+### a. ¿Qué es?
+
+La métrica empleada para medir la disponibilidad es el porcentaje de tiempo que un sistema es capaz de realizar las funciones para las que está diseñado.
+Se emplea la fórmula siguiente para calcular los niveles de disponibilidad: 
+
+Percentage of availability = (total elapsed time - sum of downtime)/total elapsed time
+
+La disponibilidad suele medirse en “nueves”. Por ejemplo, una solución cuyo nivel de disponibilidad sea de “tres nueves” es capaz de realizar su función prevista el 99,9 por ciento del tiempo, lo que equivale a un tiempo de inactividad anual de 8,76 horas por año sobre una base de 24x7x365 (24 horas al día, siete días a la semana, 365 días al año). 
+En la tabla siguiente se muestran los niveles de disponibilidad frecuentes que muchas organizaciones intentan conseguir:
+
+### b. ¿Qué patrones se pueden emplear?
+
+
+**Active-passive redundancy:** consiste por lo menos de 2 nodos. El servidor pasivo (failover) funciona como un un backup que se encuentra esperando (standby) y toma el control cuando el servidor activo se desconecta por cualquier motivo.  
+**Active-active redundancy:** consiste por lo menos de 2 nodos. Los n nodos están corriendo los mismo servicios simultáneamente. Para asegurar esto, se utilizan balanceadores de carga para distribuir los workloads por todos los nodos, para prevenir una sobrecarga sobre un nodo. Los workloads distribuidos conlleva a una mejora en tiempo de respuesta y throughput.
+**N+1 redundancy:** Existe un nodo (esclavo) pasivo, que se encuentra en espera (standby) y espera que ocurra algún error (failure) en cualquiera de los N nodos activos.
+**Floating IP:** Dentro del datacenter utilizado se crean diferentes droplets (servidores virtuales). A un droplet se le asigna una dirección IP estática que, en caso de fallar el droplet, la IP será remapeada a otro droplet (dentro del mismo datacenter).
+
+### c. Especificación mediante escenarios 
+<Dibujo>
+Esquema base para representación de escenarios.
+
+### d. ¿Qué tácticas se pueden emplear? 
+* Utilizar clustering
+* Buena infraestructura (hardware, software, memoria, bases de datos y redes)
+* “Testear” los planes de recuperación
+* Establecer un “Help Desk” para evitar el downtime
+* Monitoreo proactivo
+* Acuerdos de niveles de servicio esperado
+* Alertas de infraestructura
+* Redundancia de hardware
+* Recuperación ante fallas.
+* Arquitectura simple
+* Diseño modular en componentes de software
+* Estrategias de caché
+* Automatización para actividades de mantenimiento
+
+### e. Qué herramientas se pueden utilizar para lograrlo?
+
+* Heartbeat
+* HAProxy
+* NGINX round-robin method
+
+## 2. Análisis: Mediante escenarios y/o propuesta en marco teórico
+<Dibujo1> 
+<Dibujo2>
+
+## 3. Diseño: En Aplicación y en Sistema
+
+### a. Vistas de arquitectura 
+<DibujoFoto>
+
+### b. Patrones de arquitectura. 
+
+En el proyecto, utilizaremos las redundancias Activo-Activo (load Balancing) para la capa de servicios; y Activo-Pasivo (Failover) para el balanceador. 
+
+### c. Best Practices 
+
+* Redundancia
+* Arquitectura simple
+* Recuperación ante fallas
+* Acuerdos de niveles de servicio esperado
+
+### d. Tácticas
+
+* Uso de redundancia activo-activo, y activo-pasivo
+* Uso de replicación para la capa de datos.
+
+### e. Herramientas
+
+* Haproxy
+* NGINX
+* NFS
+
 # Rendimiento
 
 ## 1. Marco de referencia:
