@@ -126,7 +126,7 @@ Por otro lado, es el rendimiento de la computadora es la cantidad de trabajo rea
 
 Esquema base para representación de escenarios.
 
-
+![alt text](http://image.ibb.co/eXogBk/Use_Case_Diagram.png)
 
 ### d. ¿Qué tácticas se pueden emplear? 
 * El consumo de recursos 
@@ -155,12 +155,12 @@ Mientras que JMeter es clasificado como una herramienta de "generación de carga
 
 ## 2. Análisis: Mediante escenarios y/o propuesta en marco teórico
  
-
+![alt text](http://image.ibb.co/kZgexQ/Use_Case_Diagram_1.png)
 
 ## 3. Diseño: En Aplicación y en Sistema
 
 ### a. Vistas de arquitectura 
-
+![alt text](https://preview.ibb.co/jogpCQ/20170815_143044.jpg)
 ### b. Patrones de arquitectura. 
 
 Se implementará una arquitectura basada en los siguientes patrones:
