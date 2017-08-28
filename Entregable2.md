@@ -21,7 +21,7 @@ En la tabla siguiente se muestran los niveles de disponibilidad frecuentes que m
 **Floating IP:** Dentro del datacenter utilizado se crean diferentes droplets (servidores virtuales). A un droplet se le asigna una dirección IP estática que, en caso de fallar el droplet, la IP será remapeada a otro droplet (dentro del mismo datacenter).
 
 ### c. Especificación mediante escenarios 
-<Dibujo>
+(DibujoEscenario)
 Esquema base para representación de escenarios.
 
 ### d. ¿Qué tácticas se pueden emplear? 
@@ -46,13 +46,13 @@ Esquema base para representación de escenarios.
 * NGINX round-robin method
 
 ## 2. Análisis: Mediante escenarios y/o propuesta en marco teórico
-<Dibujo1> 
-<Dibujo2>
+(DibujoEscenario1)
+(DibujoEscenario2)
 
 ## 3. Diseño: En Aplicación y en Sistema
 
 ### a. Vistas de arquitectura 
-<DibujoFoto>
+(FotoArquitectura)
 
 ### b. Patrones de arquitectura. 
 
