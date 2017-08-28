@@ -203,15 +203,15 @@ Disponibilidad: el acceso a los activos en un tiempo razonable está garantizado
 
 **Patrón de Identidad Federada:** Delegar la autenticación en un proveedor de identidad externo. Esto puede simplificar el desarrollo, minimizar los requisitos de administración de usuarios y mejorar la experiencia del usuario de la aplicación.
 
-![alt text](https://preview.ibb.co/jogpCQ/20170815_143044.jpg)
+![alt text](https://image.ibb.co/hjD9xQ/Patron1.png)
 
 **Gatekeeper pattern:** Proteja las aplicaciones y los servicios utilizando una instancia de host dedicada que actúa como intermediario entre los clientes y la aplicación o servicio valida y desinfecta las solicitudes y pasa solicitudes y datos entre ellas. Esto puede proporcionar una capa adicional de seguridad y limitar la superficie de ataque del sistema.
 
-![alt text](https://preview.ibb.co/jogpCQ/20170815_143044.jpg)
+![alt text](https://preview.ibb.co/nk0NHQ/Patron2.png)
 
 **Patrón de Valet Key:** Utilice un token que proporcione a los clientes acceso restringido directo a un recurso específico para descargar la transferencia de datos de la aplicación. Esto es particularmente útil en aplicaciones que utilizan sistemas de almacenamiento alojados en la nube o colas, y puede minimizar el costo y maximizar la escalabilidad y el rendimiento.
 
-![alt text](https://preview.ibb.co/jogpCQ/20170815_143044.jpg)
+![alt text](https://preview.ibb.co/dhQHj5/Patron3.png)
 
 **Autenticación por terceros con openID:** Con eso se busca que otro servidor diferente a los de la aplicación se encargue de la autenticación.
 
@@ -220,7 +220,7 @@ Disponibilidad: el acceso a los activos en un tiempo razonable está garantizado
 
 Esquema base para representación de escenarios.
 
-![alt text](https://preview.ibb.co/jogpCQ/20170815_143044.jpg)
+![alt text](https://preview.ibb.co/eKxPWk/Escenario_General.png)
 
 ### d. ¿Qué tácticas se pueden emplear? 
 
@@ -260,7 +260,7 @@ A diferencia de arquitecturas Single Sign-On, Open ID no especifica el mecanismo
 
 ## 2. Análisis: Mediante escenarios y/o propuesta en marco teórico
  
-![alt text](https://preview.ibb.co/jogpCQ/20170815_143044.jpg)
+![alt text](https://preview.ibb.co/g1a6cQ/Escenario_Espec_fico.png)
 
 
 ## 3. Diseño: En Aplicación y en Sistema
@@ -275,7 +275,7 @@ Se implementará una arquitectura basada en el siguiente patrón:
 
 **Autenticación por terceros con openID:** Con eso se busca que otro servidor diferente a los de la aplicación se encargue de la autenticación, siguiendo la siguiente secuencia:
 
-![alt text](https://preview.ibb.co/jogpCQ/20170815_143044.jpg)
+![alt text](https://image.ibb.co/hnG1Bk/OpenID.png)
 
 ### c. Best Practices. 
 Elaborar un mapa de posibles riesgos o fallos de la aplicación para controlarlos.
