@@ -54,7 +54,8 @@ En la tabla siguiente se muestran los niveles de disponibilidad frecuentes que m
 ## 3. Diseño: En Aplicación y en Sistema
 
 ### a. Vistas de arquitectura 
-(FotoArquitectura)
+
+![alt text](https://preview.ibb.co/jogpCQ/20170815_143044.jpg)
 
 ### b. Patrones de arquitectura. 
 
