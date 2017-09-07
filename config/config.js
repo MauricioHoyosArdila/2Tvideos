@@ -10,7 +10,7 @@ var config = {
       name: '2Tvideos'
     },
     port: process.env.PORT || 3001,
-    db: 'mongodb://10.131.137.235:27017,10.131.137.243:27017,10.131.137.168:27017/2Tvideos'
+    db: 'mongodb://mongo1:27017,mongo2:27017,mongo3:27017/2Tvideos?replicaSet=drendon'
   },
 
   development: {
