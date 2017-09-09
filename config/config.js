@@ -1,6 +1,6 @@
 var path = require('path'),
     rootPath = path.normalize(__dirname + '/..'),
-    env = process.env.NODE_ENV || 'replica';
+    env = process.env.NODE_ENV || 'development';
 
 var config = {
   replica: {
@@ -10,7 +10,7 @@ var config = {
       name: '2Tvideos'
     },
     port: process.env.PORT || 3001,
-    db: 'mongodb://mongo1:27017,mongo2:27017,mongo3:27017/2Tvideos?replicaSet=drendon'
+    db: 'mongodb://mongo1:27017,mongo2:27017,mongo3:27017/2Tvideos'
   },
 
   development: {

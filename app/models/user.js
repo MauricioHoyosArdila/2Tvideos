@@ -4,10 +4,10 @@ var bcrypt = require('bcryptjs');
 
 //estructura registro de usuarios
 var UserSchema = new Schema({
-	name: String,
-	lastname: String,
-	username:String,
-	password: String
+    name: String,
+    lastname: String,
+    username:String,
+    password: String
 });
 
 var User = module.exports = mongoose.model('User', UserSchema);

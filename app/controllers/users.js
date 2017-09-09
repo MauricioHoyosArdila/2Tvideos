@@ -1,17 +1,27 @@
 var express = require('express'),
   router = express.Router(),
   mongoose = require('mongoose'),
-  User = mongoose.model('User'),
+  //User = mongoose.model('User'),
+  User = require('../models/user')
   passport = require('passport'),
   LocalStrategy = require('passport-local').Strategy,
+  GoogleStrategy = require('passport-google-oauth').OAuth2Strategy,
   bcrypt = require('bcryptjs'),
   File = mongoose.model('File'),
   cloudinary = require('cloudinary');
 
+var configAuth = require('../../config/auth');
 
 module.exports = function (app) {
   app.use('/', router);
 };
+
+
+router.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
+
+router.get('/auth/google/callback', 
+  passport.authenticate('google', { successRedirect: '/videos',
+                                      failureRedirect: '/' }));
 
 /* Servicio Web: Entrada al formato de Registro de usuarios.
  Método: GET
@@ -20,6 +30,10 @@ module.exports = function (app) {
 
 router.get('/registro', function(req, res){
   res.render("register");
+});
+
+router.get('/profile', function(req, res){
+  res.render("profile");
 });
 
 /* Servicio Web: Entrada al formato de Inicio de sesión.
@@ -77,7 +91,26 @@ router.post('/registrando', function(req, res){
 });
 
 
-passport.use(new LocalStrategy(
+/*passport.use(new LocalStrategy(
+  function(username, password, done) {
+    User.getUserByUsername(username, function(err, user){
+      if(err) throw err;
+      if(!user){
+        return done(null, false, {message: 'Usuario desconocido'});
+      }
+
+      User.comparePassword(password, user.password, function(err, isMatch){
+        if(err) throw err;
+        if(isMatch){
+          return done(null, user);
+        } else {
+          return done(null, false, {message: 'Contraseña incorrecta'});
+        }
+      });
+    });
+  }));*/
+
+  passport.use(new LocalStrategy(
   function(username, password, done) {
     User.getUserByUsername(username, function(err, user){
       if(err) throw err;
@@ -95,6 +128,39 @@ passport.use(new LocalStrategy(
       });
     });
   }));
+
+  passport.use(new GoogleStrategy({
+      clientID: configAuth.googleAuth.clientID,
+      clientSecret: configAuth.googleAuth.clientSecret,
+      callbackURL: configAuth.googleAuth.callbackURL
+    },
+    function(accessToken, refreshToken, profile, done) {
+        process.nextTick(function(){
+          User.findOne({'google.id': profile.id}, function(err, user){
+          //User.getUserByUsername(google.username, function(err, user){
+            if(err)
+              return done(err);
+            if(user)
+              return done(null, user);
+            else {
+              var newUser = new User();
+              newUser.google.id = profile.id;
+              newUser.google.token = accessToken;
+              newUser.google.name = profile.displayName;
+              newUser.google.email = profile.emails[0].value;
+
+              newUser.save(function(err){
+                if(err)
+                  throw err;
+                return done(null, newUser);
+              })
+              console.log(profile);
+            }
+          });
+        });
+      }
+
+  ));
 
 passport.serializeUser(function(user, done) {
   done(null, user.id);
