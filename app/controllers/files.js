@@ -8,7 +8,7 @@ var express = require('express'),
 //var upload = multer({dest :'./videos'});
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './public/videos')
+    cb(null, './public/videos1')
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + file.originalname )
