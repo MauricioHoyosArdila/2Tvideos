@@ -8,7 +8,7 @@ var express = require('express'),
 //var upload = multer({dest :'./videos'});
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './public/videos1')
+    cb(null, './public/uploads')
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + file.originalname )
@@ -57,7 +57,7 @@ router.post("/publicando", upload.single('video'), function(req,res){
   };
   console.log(req.file.path);
   var archivo = new File(video);
-  archivo.video = "/videos/" +req.file.filename;
+  archivo.video = "/uploads/" +req.file.filename;
   archivo.save(function(err){
     console.log(archivo);
     res.redirect("/misvideos");
