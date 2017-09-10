@@ -11,7 +11,7 @@ var express = require('express'),
 //var upload = multer({dest :'./videos'});
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './public/uploads')
+    cb(null, './../../../mnt/uploads')
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + file.originalname )
@@ -60,7 +60,7 @@ router.post("/publicando", upload.single('video'), function(req,res){
   };
   console.log(req.file.path);
   var archivo = new File(video);
-  archivo.video = "/uploads/" +req.file.filename;
+  archivo.video = "./../../../mnt/uploads/" +req.file.filename;
   archivo.save(function(err){
     console.log(archivo);
     res.redirect("/misvideos");
@@ -87,20 +87,20 @@ router.post("/publicando", upload.single('video'), function(req,res){
  */
 
 
-router.get("/videos",ensureAuthenticated,function(req, res){  
+router.get("/videos",ensureAuthenticated,function(req, res){
   //console.log(req.file);
   File.find({privateFile:"false"},function(err, documento){
     if(err){console.log(err);}
-    for (i = 0; i < documento.length; i++) { 
+    for (i = 0; i < documento.length; i++) {
       var camino= documento[i].video;
       //console.log(documento[i].video);
       var vec = camino.split('/');
       camino= "/cache/"+vec[vec.length-1];
       if (cache[camino]) {
-       
+
         documento[i].video=camino;
         //console.log(documento[i].video);
-        console.log('Recurso recuperado del cache:'+camino);    
+        console.log('Recurso recuperado del cache:'+camino);
       }else{
         cache[camino]=true;
 
@@ -109,12 +109,12 @@ router.get("/videos",ensureAuthenticated,function(req, res){
         //console.log('Recurso leido del disco:'+camino);
         //console.log(__dirname+documento[i].video);
         //console.log(__dirname+camino);
-        
+
         copyFile(dir+'/public'+documento[i].video, dir+'/public'+camino, function(error) {
            if (error) return console.error(error);
               //console.log('File was copied!')
         });
-       
+
       }
     }
     //console.log(documento);
