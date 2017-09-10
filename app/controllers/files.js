@@ -60,7 +60,7 @@ router.post("/publicando", upload.single('video'), function(req,res){
   };
   console.log(req.file.path);
   var archivo = new File(video);
-  archivo.video = "./../../../mnt/uploads/" +req.file.filename;
+  archivo.video = "./../../../../../mnt/uploads/" +req.file.filename;
   archivo.save(function(err){
     console.log(archivo);
     res.redirect("/misvideos");
