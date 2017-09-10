@@ -110,7 +110,7 @@ router.get("/videos",ensureAuthenticated,function(req, res){
         //console.log(__dirname+documento[i].video);
         //console.log(__dirname+camino);
 
-        copyFile(dir+'/public'+documento[i].video, dir+'/public'+camino, function(error) {
+        copyFile('/mnt'+documento[i].video, dir+'/public'+camino, function(error) {
            if (error) return console.error(error);
               //console.log('File was copied!')
         });
