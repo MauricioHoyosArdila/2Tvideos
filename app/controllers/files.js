@@ -3,7 +3,10 @@ var express = require('express'),
   multer = require('multer'),
   cloudinary = require('cloudinary'),
   mongoose = require('mongoose'),
-  File = mongoose.model('File');
+  File = mongoose.model('File'),
+  fs= require('fs');
+
+ var copyFile = require('quickly-copy-file');
 //destino de videos subidos
 //var upload = multer({dest :'./videos'});
 var storage = multer.diskStorage({
@@ -41,7 +44,7 @@ router.get('/publicar', ensureAuthenticated, function(req, res){
  Método: POST
  URI: /publicando
  */
-
+var cache={};
 router.post("/publicando", upload.single('video'), function(req,res){
   var private = false;
   if(req.body.privateFile == 'on'){
@@ -83,9 +86,38 @@ router.post("/publicando", upload.single('video'), function(req,res){
  URI: /videos
  */
 
-router.get("/videos",ensureAuthenticated,function(req, res){
+
+router.get("/videos",ensureAuthenticated,function(req, res){  
+  //console.log(req.file);
   File.find({privateFile:"false"},function(err, documento){
     if(err){console.log(err);}
+    for (i = 0; i < documento.length; i++) { 
+      var camino= documento[i].video;
+      //console.log(documento[i].video);
+      var vec = camino.split('/');
+      camino= "/cache/"+vec[vec.length-1];
+      if (cache[camino]) {
+       
+        documento[i].video=camino;
+        //console.log(documento[i].video);
+        console.log('Recurso recuperado del cache:'+camino);    
+      }else{
+        cache[camino]=true;
+
+        var dir=process.cwd();
+        //console.log(__dirname-"/app/controllers");
+        //console.log('Recurso leido del disco:'+camino);
+        //console.log(__dirname+documento[i].video);
+        //console.log(__dirname+camino);
+        
+        copyFile(dir+'/public'+documento[i].video, dir+'/public'+camino, function(error) {
+           if (error) return console.error(error);
+              //console.log('File was copied!')
+        });
+       
+      }
+    }
+    //console.log(documento);
     res.render("display",{ videos : documento})
   });
 });
