@@ -15,6 +15,8 @@
 
 Para el desarrollo se utilizaron cuatro máquinas diferentes, pero las versiones y tecnologías fueron exactamente las mismas excepto por el editor de texto y el sistema operativo de las máquinas.
 
+| | |
+| --- | --- |
 | SISTEMA OPERATIVO | Windows 10 - Linux - MacOS |
 | LENGUAJE DE PROGRAMACIÓN | JavaScript / NodeJS |
 | FRAMEWORK WEB - BACKEND | Express |
@@ -38,9 +40,10 @@ https://github.com/danielr9911/2Tvideos
 
 La aplicación correrá sobre dos DCA’s de 2gb de RAM, 20gb de Disco duro y dos procesadores virtuales cada uno, además esta máquina virtual tendrá el sistema .operativo CentOS 7.1, esta estará duplicada en ambas máquinas. Además habrá otras máquinas de las mismas especificaciones , donde estarán corriendo el load balancer y las bases de datos de la aplicación.
 
-[Imagen Despliegue]
+![alt text](http://image.ibb.co/kbLhjF/Diagrama.jpg)
 
-
+| | |
+| --- | --- |
 | SISTEMA OPERATIVO | LINUX CENTOS 7.1 |
 | LOAD BALANCER IP | 10.131.137.203 |
 | DIRECCIÓN IP SERVIDOR | 10.131.137.244- 10.131.137.169 |
