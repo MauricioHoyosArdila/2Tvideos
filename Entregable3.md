@@ -60,9 +60,9 @@ La aplicación correrá sobre dos DCA’s de 2gb de RAM, 20gb de Disco duro y do
 
 ### ii. Urls de ejecución
 
-http://10.131.137.203
-http://proyecto24.dis.eafit.edu.co/
-https://proyecto24.dis.eafit.edu.co/
+- http://10.131.137.203
+- http://proyecto24.dis.eafit.edu.co/
+- https://proyecto24.dis.eafit.edu.co/
 
 # 3. Implementación y pruebas por atributo de calidad
 
