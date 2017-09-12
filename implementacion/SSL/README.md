@@ -3,7 +3,7 @@
 #### N/A
 
 # Rendimiento
-
+#### N/A
 # Seguridad
 
 #### Dominio: proyecto24.dis.eafit.edu.co
