@@ -30,7 +30,7 @@ Se incio el servicio de mongod:
     sudo systemctl enable mongod
     sudo systemctl start mongod
 
-Abrimos los puertos necesarios para mongo:
+Se abrieron los puertos necesarios para mongo:
 
     firewall-cmd --permanent --add-port=22/tcp
     firewall-cmd --permanent --add-port=27017/tcp
